@@ -13,8 +13,7 @@ network. A12coin Core is the name of the open source software which enables
 the use of this currency.
 
 For more information, as well as an immediately useable, binary version of the
-A12coin Core software, see
-https://wwww.a12coin.org
+A12coin Core software, see https://wwww.a12coin.org
 
 Usage
 -----
@@ -51,7 +50,6 @@ Contributing
 If you find a bug or experience issues with this software, please report it
 using the issue system.
 
-Please see the contribution guide to see how you can participate in the
-development of A12coin Core.
-There are often topics seeking help where your contributions will have high
-impact and get very appreciation. wow.
+Please see [the contribution guide](CONTRIBUTING.md). To see how you can
+participate in the development of A12coin Core.
+There are arranged topics that [need help](https://github.com/a12coin-project/a12coin/labels/help%20wanted) where a contribution will have a big impact and will be highly appreciated.
