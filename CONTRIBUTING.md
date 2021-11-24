@@ -16,7 +16,6 @@ release cycle, overall merging, moderation and appointment of maintainers.
 
 Contributor Workflow
 --------------------
-
 The codebase is maintained using the "contributor workflow" where everyone
 without exception contributes patch proposals using "pull requests". This
 facilitates social contribution, easy testing and peer review.
@@ -121,7 +120,6 @@ pull request to pull request.
 
 Pull Request Philosophy
 -----------------------
-
 Patchsets should always be focused. For example, a pull request could add a
 feature, fix a bug, or refactor code; but not a mixture. Please also avoid super
 pull requests which attempt to do too much, are overly large, or overly complex
@@ -153,7 +151,6 @@ where possible keep them short, uncomplex and easy to verify.
 
 "Decision Making" Process
 -------------------------
-
 The following applies to code changes to the A12coin Core project, and is not to be confused with overall A12coin
 Network Protocol consensus changes.
 
@@ -255,7 +252,6 @@ about:
 
 Finding Reviewers
 -----------------
-
 As most reviewers are themselves developers with their own projects, the review
 process can be quite lengthy, and some amount of patience is required. If you find
 that you've been waiting for a pull request to be given attention for several
@@ -288,12 +284,10 @@ about:
 
 Release Policy
 --------------
-
 The project leader is the release manager for each A12coin Core release.
 
 Copyright
 ---------
-
 By contributing to this repository, you agree to license your work under the
 MIT license unless specified otherwise in `contrib/debian/copyright` or at
 the top of the file itself. Any work contributed where you are not the original
