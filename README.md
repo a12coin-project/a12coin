@@ -11,6 +11,17 @@ A12coin uses peer-to-peer technology to operate with no central authority: manag
 For more information, as well as an immediately useable, binary version of the A12coin Core software, see
 https://wwww.a12coin.org
 
+Usage
+-----
+To get started with A12coin Core, see the installation guide.
+
+Used ports
+----------
+| Function | mainnet | testnet | regnet |
+| :------- | ------: | ------: | -----: |
+| P2P      |
+| RPC      |
+
 License
 -------
 A12coin Core is released under the terms of the MIT license.
