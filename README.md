@@ -18,7 +18,7 @@ To get started with A12coin Core, see the installation guide.
 Used ports
 ----------
 A12coin Core by default uses port 7333 for peer-to-peer communication that is needed to synchronize the "mainnet" blockchain and stay informed of new transactions and blocks.
-
+Additionally, a RPC port can be opened, which defaults to port 7332 for mainnet nodes. It is strongly recommended to not expose RPC ports to the public internet.
 | Function | mainnet | testnet | regnet |
 | :------- | ------: | ------: | -----: |
 | P2P      |    7333 |   27335 |  27444 |
