@@ -79,7 +79,7 @@ public:
         consensus.BIP34Hash = uint256S("fa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf");
         consensus.BIP65Height = 918684; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 811879; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 1.75 * 24 * 60 * 60; // 1.75 days
         consensus.nPowTargetSpacing = 1.5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -101,10 +101,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1609455599; // January 31st, 2020
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000001a001a0");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x9bc2df843df94c946014e45d8d363ec23f330e75b3adf26ecad337c0f57d4d5a"); // height : 0
+        consensus.defaultAssumeValid = uint256S("0xfed78049ba3fc053d1d16338d87d87d227a2f0cc672283ac5ccfd5d8ba12b460"); // height : 25
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -124,7 +124,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0xc4e56452ef813eb78c89d5ed2594d28104126c404538339897a0a7f72fe174d7"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-//        vSeeds.emplace_back("dnsseed.a12coin.org", true);
+        vSeeds.emplace_back("dnsseed.a12coin.org", true);
 //        vSeeds.emplace_back("dnsseed.a12coin.com", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,23);
@@ -142,13 +142,14 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {     0, uint256S("09bc2df843df94c946014e45d8d363ec23f330e75b3adf26ecad337c0f57d4d5a")},
+              {     0, uint256S("0x9bc2df843df94c946014e45d8d363ec23f330e75b3adf26ecad337c0f57d4d5a")},
+              {    30, uint256S("0x306750c9130bbc5322e0b64eb58a39bf6a2b75c8b0878e97f95b0656dfbd559e")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 59c9b9d3fec105bdc716d84caa7579503d5b05b73618d0bf2d5fa639f780a011 (height 1353397).
-            944221650,  // * UNIX timestamp of last known number of transactions
+            // Data as of block fed78049ba3fc053d1d16338d87d87d227a2f0cc672283ac5ccfd5d8ba12b460 (height 25).
+            1637669501,  // * UNIX timestamp of last known number of transactions
             0,          // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.0         // * estimated number of transactions per second after that timestamp
@@ -286,7 +287,7 @@ public:
         nPruneAfterHeight = 1000;
 
         genesis = CreateGenesisBlock(1514947463, 3, 0x207fffff, 1, 75 * COIN);
-        consensus.hashGenesisBlock = genesis.GetHash();       
+        consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0xa07feb3f75432e9003f7a42a87230b0d61e1f2001e4fe110560122a9877749b8"));
         assert(genesis.hashMerkleRoot == uint256S("0xc4e56452ef813eb78c89d5ed2594d28104126c404538339897a0a7f72fe174d7"));
 
@@ -295,7 +296,7 @@ public:
 
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
-        fMineBlocksOnDemand = true; 
+        fMineBlocksOnDemand = true;
 
         checkpointData = (CCheckpointData) {
             {
