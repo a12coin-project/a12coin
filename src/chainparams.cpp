@@ -75,10 +75,10 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 500000;
-        consensus.BIP34Height = 1950;
-        consensus.BIP34Hash = uint256S("acc537c39ef32df5b46755e50ef135ccc2347ca8df3d68095d39c5006a65ac2d");
-        consensus.BIP65Height = 2450; // a6200e08afeca4013e5594ed3b692f8b63e39a5ad56ba6db4c973245c250685c
-        consensus.BIP66Height = 2200; // 5badc13311eea51f8d64fa0692e10fabc7b82c4c4b87c15eb1d7cd72d96855d3
+        consensus.BIP34Height = 450;
+        consensus.BIP34Hash = uint256S("0d7d91bb94cec4793b2879c88f0b6ad76152451c74f9571810f7efc0f54386ec");
+        consensus.BIP65Height = 850; // 58a8ac69a82cbdbeb264bc1295a3b644a4854609bd3c13865a44f02b59359f90
+        consensus.BIP66Height = 550; // 0ab1498268f6a05cf4a19f7b721f77993e38b7e13d21dd1ed8b339a99cee0939
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 1.75 * 24 * 60 * 60; // 1.75 days
         consensus.nPowTargetSpacing = 2 * 60;
@@ -104,7 +104,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000009c506c35");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xa1976941e4fc8b8607a83f661aba8afd9c8c3f5ceaa8f3d13cbbd2160481e01c"); // height : 1850
+        consensus.defaultAssumeValid = uint256S("0x818e4e12a2d44d21d1e46d50ee8fc4b55fb7ec9f5e44ab0d08f37996a1ca9c5c"); // height : 750
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -145,13 +145,12 @@ public:
               {     0, uint256S("0x9bc2df843df94c946014e45d8d363ec23f330e75b3adf26ecad337c0f57d4d5a")},
               {   500, uint256S("0x26da2440c59d39a267794c3e4d643f6e74d15f684ee69af7e0f4eba97ce53cbc")},
               {  1000, uint256S("0x99a656afd807246ffe70c50e072eca0db62fc3af0a9fdfd92523600f716ba37b")},
-              {  2500, uint256S("0xfb17a5b91f27052ed70e71969a2b73bdfa5c3bc8cc6c52219e21e15fc24c12e5")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block fb17a5b91f27052ed70e71969a2b73bdfa5c3bc8cc6c52219e21e15fc24c12e5 (height 2500).
-            1637804579,  // * UNIX timestamp of last known number of transactions
+            1637803083,  // * UNIX timestamp of last known number of transactions
             0,          // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.0         // * estimated number of transactions per second after that timestamp
