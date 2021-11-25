@@ -143,9 +143,9 @@ public:
         checkpointData = (CCheckpointData) {
             {
               {     0, uint256S("0x9bc2df843df94c946014e45d8d363ec23f330e75b3adf26ecad337c0f57d4d5a")},
-              {   500, unit256s("0x26da2440c59d39a267794c3e4d643f6e74d15f684ee69af7e0f4eba97ce53cbc")},
-              {  1000, unit256s("0x99a656afd807246ffe70c50e072eca0db62fc3af0a9fdfd92523600f716ba37b")},
-              {  2500, unit256s("0xfb17a5b91f27052ed70e71969a2b73bdfa5c3bc8cc6c52219e21e15fc24c12e5")},
+              {   500, uint256S("0x26da2440c59d39a267794c3e4d643f6e74d15f684ee69af7e0f4eba97ce53cbc")},
+              {  1000, uint256S("0x99a656afd807246ffe70c50e072eca0db62fc3af0a9fdfd92523600f716ba37b")},
+              {  2500, uint256S("0xfb17a5b91f27052ed70e71969a2b73bdfa5c3bc8cc6c52219e21e15fc24c12e5")},
             }
         };
 
