@@ -93,4 +93,10 @@
         <file alias="spinner-034">res/movies/spinner-034.png</file>
         <file alias="spinner-035">res/movies/spinner-035.png</file>
     </qresource>
+    <qresource prefix="/fonts">
+        <file alias="Utsaah-Bold">res/fonts/Utsaahb.ttf</file>
+        <file alias="Utsaah-Bold-Italic">res/fonts/Utsaahbi.ttf</file>
+        <file alias="Utsaah-Italic">res/fonts/Utsaahi.ttf</file>
+        <file alias="Utsaah-Regular">res/fonts/Utsaah.ttf</file>
+   </qresource>
 </RCC>

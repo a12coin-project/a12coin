@@ -43,6 +43,7 @@
 #include <QDateTime>
 #include <QDesktopWidget>
 #include <QDragEnterEvent>
+#include <QFontDatabase>
 #include <QListWidget>
 #include <QMenuBar>
 #include <QMessageBox>
@@ -170,6 +171,19 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
          */
         setCentralWidget(rpcConsole);
     }
+
+    // A12coin: load fallback font in case Rockwell Nova is not availble on the system
+    QFontDatabase::addApplicationFont(":fonts/Utsaah-Bold");
+    QFontDatabase::addApplicationFont(":fonts/Utsaah-Bold-Italic");
+    QFontDatabase::addApplicationFont(":fonts/Utsaah-Italic");
+    QFontDatabase::addApplicationFont(":fonts/Utsaah-Regular");
+    QFont::insertSubstitution("Utsaah", "Utsaah");
+
+    // A12coin: Specify Rockwell Nova as new font.
+    QFont newFont("Utsaah", 12);
+
+    // A12coin: Set new application font
+    QApplication::setFont(newFont);
 
     // Accept D&D of URIs
     setAcceptDrops(true);
