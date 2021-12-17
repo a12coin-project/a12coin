@@ -75,10 +75,10 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 500000;
-        consensus.BIP34Height = 125;
-        consensus.BIP34Hash = uint256S("0xf3fccb8e672ee83687262bb1dfbe3ee7170206c52bdb7fef8d95df6bf421389c");
-        consensus.BIP65Height = 175; // 85a64d4aa5dedee5c1c1ff4b929c3282d0077b7e9f342a3c35962bf65c4f57f7
-        consensus.BIP66Height = 150; // f9815a13c7f1d694c1683f3fb1989f431c0e4f064eb536f1d6c70d176722037a
+        consensus.BIP34Height = 2800;
+        consensus.BIP34Hash = uint256S("0x1ba624b5181917f22bb564976494b91d5f6c4e302ae7878ba29bd847f54e7c49");
+        consensus.BIP65Height = 2950; // fa057e65e2b528652d6e6fe938e79dd12149d6a92684db78a388b24c036eca9b
+        consensus.BIP66Height = 2875; // f1301bd0098563557ddba7d998bafa040c791012d0f892b9afd359c6fcab5c88
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 5 * 60;
@@ -101,10 +101,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1609455599; // January 31st, 2020
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000013701370");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000067e0585f0");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x6cc08b49ab0c2b1e400b0fb29ee82c86dc79eab3ab1f80bea2d339403a7aa491"); // height : 225
+        consensus.defaultAssumeValid = uint256S("0x526d8ebda365f6f57dbd75b8c5332742789f6f99af828f0fd0d70d68a4ffb70a"); // height : 2500
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -143,15 +143,15 @@ public:
         checkpointData = (CCheckpointData) {
             {
                 {     0, uint256S("0xf1f797af6649ff63a9acab412d8d44bdedd9930b692c3d387c8fe04b34f5aa3b")},
-                {   150, uint256S("0xf9815a13c7f1d694c1683f3fb1989f431c0e4f064eb536f1d6c70d176722037a")},
-                {   300, uint256S("0x13ff2b91e8553e70216745ccc80f556b938e950da278a321d82eddd97a393f48")},
+                {  1500, uint256S("0x2c5fd5430b002ccee59e1540dd93dab8f6be51fcee6b03f24029d74f7244506b")},
+                {  3000, uint256S("0x8c8f98a66eead2d7bbca74ebcf21ea538922e4eef4de29a97ad1a7e2d8d7311d")},
 
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 11eb46105ea10fb0d113757024c036881624602fb2b7e438c8138a2d61f8c120 (height 375).
-            1639602001, // * UNIX timestamp of last known number of transactions
+            // Data as of block f33bccf1cdc327a65795f51a35ad584a35aac7e8559e8bb7129d3ad711fe41bc (height 4100).
+            1639772051, // * UNIX timestamp of last known number of transactions
             0,          // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.0         // * estimated number of transactions per second after that timestamp
