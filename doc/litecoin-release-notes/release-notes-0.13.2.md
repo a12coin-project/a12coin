@@ -361,9 +361,9 @@ arbitrary TCP connections inside SSL. On e.g. Ubuntu it can be installed with:
 
     sudo apt-get install stunnel4
 
-Then, to tunnel a SSL connection on 37332 to a RPC server bound on localhost on port 19334 do:
+Then, to tunnel a SSL connection on 37332 to a RPC server bound on localhost on port 27334 do:
 
-    stunnel -d 37332 -r 127.0.0.1:19334 -p stunnel.pem -P ''
+    stunnel -d 37332 -r 127.0.0.1:27334 -p stunnel.pem -P ''
 
 It can also be set up system-wide in inetd style.
 
