@@ -33,7 +33,7 @@ If you're using the automated script (found in [contrib/gitian-build.sh](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/a12coin-project/gitian.sigs.git
+    git clone https://github.com/a12coin-project/gitian.sigs.xan.git
     git clone https://github.com/a12coin-project/a12coin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     git clone https://github.com/a12coin-project/a12coin.git
@@ -68,9 +68,9 @@ Setup Gitian descriptors:
     git checkout v${VERSION}
     popd
 
-Ensure your gitian.sigs are up-to-date if you wish to gverify your builds against other Gitian signatures.
+Ensure your gitian.sigs.xan are up-to-date if you wish to gverify your builds against other Gitian signatures.
 
-    pushd ./gitian.sigs
+    pushd ./gitian.sigs.xan
     git pull
     popd
 
@@ -112,16 +112,16 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit a12coin=v${VERSION} ../a12coin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../a12coin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.xan/ ../a12coin/contrib/gitian-descriptors/gitian-linux.yml
     mv build/out/a12coin-*.tar.gz build/out/src/a12coin-*.tar.gz ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit a12coin=v${VERSION} ../a12coin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../a12coin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.xan/ ../a12coin/contrib/gitian-descriptors/gitian-win.yml
     mv build/out/a12coin-*-win-unsigned.tar.gz inputs/a12coin-win-unsigned.tar.gz
     mv build/out/a12coin-*.zip build/out/a12coin-*.exe ../
 
     ./bin/gbuild --num-make 2 --memory 3000 --commit a12coin=v${VERSION} ../a12coin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../a12coin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.xan/ ../a12coin/contrib/gitian-descriptors/gitian-osx.yml
     mv build/out/a12coin-*-osx-unsigned.tar.gz inputs/a12coin-osx-unsigned.tar.gz
     mv build/out/a12coin-*.tar.gz build/out/a12coin-*.dmg ../
     popd
@@ -132,7 +132,7 @@ Build output expected:
   2. linux 32-bit and 64-bit dist tarballs (`a12coin-${VERSION}-linux[32|64].tar.gz`)
   3. windows 32-bit and 64-bit unsigned installers and dist zips (`a12coin-${VERSION}-win[32|64]-setup-unsigned.exe`, `a12coin-${VERSION}-win[32|64].zip`)
   4. OS X unsigned installer and dist tarball (`a12coin-${VERSION}-osx-unsigned.dmg`, `a12coin-${VERSION}-osx64.tar.gz`)
-  5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
+  5. Gitian signatures (in `gitian.sigs.xan/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
@@ -144,21 +144,21 @@ Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../a12coin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../a12coin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../a12coin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs.xan/ -r ${VERSION}-linux ../a12coin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs.xan/ -r ${VERSION}-win-unsigned ../a12coin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs.xan/ -r ${VERSION}-osx-unsigned ../a12coin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
 
-Commit your signature to gitian.sigs:
+Commit your signature to gitian.sigs.xan:
 
-    pushd gitian.sigs
+    pushd gitian.sigs.xan
     git add ${VERSION}-linux/${SIGNER}
     git add ${VERSION}-win-unsigned/${SIGNER}
     git add ${VERSION}-osx-unsigned/${SIGNER}
     git commit -a
-    git push  # Assuming you can push to the gitian.sigs tree
+    git push  # Assuming you can push to the gitian.sigs.xan tree
     popd
 
 Codesigner only: Create Windows/OS X detached signatures:
@@ -201,8 +201,8 @@ Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../a12coin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../a12coin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../a12coin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.xan/ ../a12coin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.xan/ -r ${VERSION}-osx-signed ../a12coin/contrib/gitian-descriptors/gitian-osx-signer.yml
     mv build/out/a12coin-osx-signed.dmg ../a12coin-${VERSION}-osx.dmg
     popd
 
@@ -210,19 +210,19 @@ Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
     ./bin/gbuild -i --commit signature=v${VERSION} ../a12coin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../a12coin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../a12coin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.xan/ ../a12coin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.xan/ -r ${VERSION}-win-signed ../a12coin/contrib/gitian-descriptors/gitian-win-signer.yml
     mv build/out/a12coin-*win64-setup.exe ../a12coin-${VERSION}-win64-setup.exe
     mv build/out/a12coin-*win32-setup.exe ../a12coin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
 
-    pushd gitian.sigs
+    pushd gitian.sigs.xan
     git add ${VERSION}-osx-signed/${SIGNER}
     git add ${VERSION}-win-signed/${SIGNER}
     git commit -a
-    git push  # Assuming you can push to the gitian.sigs tree
+    git push  # Assuming you can push to the gitian.sigs.xan tree
     popd
 
 ### After 3 or more people have gitian-built and their results match:
