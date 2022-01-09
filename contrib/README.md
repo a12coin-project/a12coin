@@ -26,7 +26,7 @@ Contains files used to package a12coind/a12coin-qt
 for Debian-based Linux systems. If you compile a12coind/a12coin-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
-Files used during the gitian build process. For more information about gitian, see the [the Bitcoin Core documentation repository](https://github.com/bitcoin-core/docs).
+Notes on getting Gitian builds up and running using KVM.
 
 ### [Gitian-keys](/contrib/gitian-keys)
 PGP keys used for signing A12coin Core [Gitian release](/doc/release-process.md) results.
@@ -35,7 +35,7 @@ PGP keys used for signing A12coin Core [Gitian release](/doc/release-process.md)
 Scripts and notes for Mac builds. 
 
 ### [RPM](/contrib/rpm) ###
-RPM spec file for building ba12coin-core on RPM based distributions.
+RPM spec file for building a12coin-core on RPM based distributions
 
 ### [Gitian-build](/contrib/gitian-build.sh) ###
 Script for running full Gitian builds.

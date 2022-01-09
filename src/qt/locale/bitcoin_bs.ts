@@ -32,10 +32,6 @@
     </context>
 <context>
     <name>Intro</name>
-    <message>
-        <source>A12coin</source>
-        <translation>A12coin</translation>
-    </message>
     </context>
 <context>
     <name>ModalOverlay</name>
