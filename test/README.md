@@ -8,7 +8,7 @@ There are currently two sets of tests in this directory:
 - [functional](/test/functional) which test the functionality of 
 a12coind and a12coin-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the a12coin utilities, currently only
+- [util](test/util) which tests the a12coin utilities, currently only
 a12coin-tx.
 
 The util tests are run as part of `make check` target. The functional

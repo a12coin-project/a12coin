@@ -1,39 +1,4 @@
-### Compiling/running unit tests
-
-Unit tests will be automatically compiled if dependencies were met in `./configure`
-and tests weren't explicitly disabled.
-
-After configuring, they can be run with `make check`.
-
-To run the a12coind tests manually, launch `src/test/test_a12coin`. To recompile
-after a test file was modified, run `make` and then run the test again. If you
-modify a non-test file, use `make -C src/test` to recompile only what's needed
-to run the a12coind tests.
-
-To add more a12coind tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
-.cpp files in the `test/` directory or add new .cpp files that
-implement new BOOST_AUTO_TEST_SUITE sections.
-
-To run the a12coin-qt tests manually, launch `src/qt/test/test_a12coin-qt`
-
-To add more a12coin-qt tests, add them to the `src/qt/test/` directory and
-the `src/qt/test/test_main.cpp` file.
-
-### Running individual tests
-
-test_a12coin has some built-in command-line arguments; for
-example, to run just the getarg_tests verbosely:
-
-    test_a12coin --log_level=all --run_test=getarg_tests
-
-... or to run just the doubledash test:
-
-    test_a12coin --run_test=getarg_tests/doubledash
-
-Run `test_a12coin --help` for the full list.
-
-### Note on adding test cases
-
+# Notes
 The sources in this directory are unit test cases.  Boost includes a
 unit testing framework, and since a12coin already uses boost, it makes
 sense to simply use this framework rather than require developers to
@@ -55,4 +20,4 @@ Add the source files to /src/Makefile.test.include to add them to the build.
 
 For further reading, I found the following website to be helpful in
 explaining how the boost unit test framework works:
-[http://www.alittlemadness.com/2009/03/31/c-unit-testing-with-boosttest/](http://archive.is/dRBGf).
+[http://www.alittlemadness.com/2009/03/31/c-unit-testing-with-boosttest/](http://www.alittlemadness.com/2009/03/31/c-unit-testing-with-boosttest/).
